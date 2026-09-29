@@ -2,9 +2,7 @@
 
 A live macOS wallpaper that turns your Claude Code activity into a night city. It stays dark while nothing is happening. When your agents start spending tokens, the windows light up, traffic fills the avenues, and every finished response falls on the city as a meteor carrying the Claude Code mascot.
 
-![Agent City while agents are working](docs/hero.jpg)
-
-<p align="center"><img src="docs/meteor.webp" width="700" alt="A big response lands on its project's tower as a meteor, followed by a volley of subagents"></p>
+![Agent City as the macOS wallpaper while agents are working: mascot meteors land on the city under the menu bar and Dock](docs/desktop.webp)
 
 Inspired by the [@internetphysics demo](https://x.com/internetphysics/status/2104305710079119649). This is an unofficial fan project, not affiliated with or endorsed by Anthropic. Claude and the Claude Code mascot belong to Anthropic.
 
@@ -16,6 +14,8 @@ Inspired by the [@internetphysics demo](https://x.com/internetphysics/status/210
 | A response finishes | A meteor carrying the mascot falls on that project's tower, and the tower lights up from the roof down. Subagents land on the blocks around it. Bigger responses make bigger meteors, and each one lands with a soft thump |
 | A burst of tokens | More traffic on the avenues |
 | Nothing for 60 seconds | The city fades back to rest and stops rendering |
+
+<p align="center"><img src="docs/meteor.webp" width="700" alt="Close-up: a big response lands on its project's tower as a meteor, followed by a volley of subagents"></p>
 
 The counters in the lower left show the projects and agents active right now, all tokens today (including cache reads), new tokens today (input and output only), and what today's usage would cost at Claude API list prices.
 
