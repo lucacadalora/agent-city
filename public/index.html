@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent City</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0a0b; cursor: default; }
+  canvas { display: block; width: 100vw; height: 100vh; }
+  #fx { position: fixed; inset: 0; pointer-events: none; }   /* pixel-art mascots over the city */
+  #hud {
+    position: fixed; left: 40px; bottom: calc(var(--dock, 0px) + 56px);
+    display: flex; gap: 40px; align-items: flex-start;
+    color: #fff; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased; pointer-events: none; user-select: none;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, .55), 0 0 2px rgba(0, 0, 0, .45);
+  }
+  #hud .lab { font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, .58); }
+  /* Equal-width digits, so rolling counters don't wobble or shove the columns beside them. */
+  #hud .val { font-size: 36px; font-weight: 500; line-height: 1.15; letter-spacing: -.01em; margin-top: 2px;
+              font-variant-numeric: tabular-nums; }
+  #hud .sub { font-variant-numeric: tabular-nums; }
+  /* The Agents line changes length ("Idle" / "6 subagents · project working"): fixed width, cut with … */
+  #hud > div:nth-child(2) { width: 230px; }
+  #hud > div:nth-child(2) .sub { overflow: hidden; text-overflow: ellipsis; }
+  #hud .sub { font-size: 12px; font-weight: 500; color: rgba(255, 255, 255, .46); margin-top: 2px; min-height: 15px; white-space: nowrap; }
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div id="hud">
+  <div><div class="lab">Projects</div><div class="val" id="vProjects">0</div><div class="sub"></div></div>
+  <div><div class="lab">Agents</div><div class="val" id="vAgents">0</div><div class="sub" id="sAgents">Idle</div></div>
+  <div><div class="lab">Tokens today</div><div class="val" id="vTokens">0</div><div class="sub" id="sTokens"></div></div>
+  <div><div class="lab">New tokens</div><div class="val" id="vFresh">0</div><div class="sub">typed + written, no cache</div></div>
+  <div><div class="lab">API equivalent</div><div class="val" id="vUsd">$0</div><div class="sub">at Claude API list prices</div></div>
+</div>
+<script type="importmap">
+  { "imports": { "three": "/vendor/three/build/three.module.js", "three/addons/": "/vendor/three/examples/jsm/" } }
+</script>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "agent-city",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A macOS wallpaper city that lights up while Claude Code agents spend tokens.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucacadalora/agent-city.git"
+  }
+}
